@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre | Nossa Escola</title>
+  <title>Home | Nossa Escola</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- Cabeçalho -->
+<!--Cabeçalho-->
+
 <body>
   <header>
     <div class="cabecalho-itens">
@@ -21,6 +22,7 @@
         </a>
       </div>
     </div>
+    
 <!-- Menu daora do tonhao -->
     <nav class="menu-principal" aria-label="Menu principal">
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -35,26 +37,35 @@
     </nav>
   </header>
 
-  <main>
-    <section class="conteudo-pagina">
-      <h2>Sobre mim</h2>
-      <p>Sou Gabriel de Lima Amorim, aluno do curso de Desenvolvimento de Sistemas, apaixonado por tecnologia, design e soluções práticas para o dia a dia digital.</p>
-      <p>Este projeto foi desenvolvido para apresentar meus trabalhos, objetivos e experiências acadêmicas de forma clara e moderna, com foco em usabilidade e acessibilidade.</p>
+<body>
+  <script src="script.js"></script>
+</body>
 
-      <h3>Objetivos</h3>
-      <ul>
-        <li>Aprender continuamente com projetos práticos.</li>
-        <li>Desenvolver interfaces responsivas e acessíveis.</li>
-        <li>Aplicar conhecimento em front-end e comunicação visual.</li>
-      </ul>
-    </section>
-  </main>
-<!-- Rodapé -->
+  <!-- Rodapé -->
   <footer class="escola">
     <img class="logo_rodape" src="logo_nossa_escola.webp" alt="Logo da escola">
     <h2 class="escola-titulo">Mais informações entre em contato <a class="link" href="https://wa.me/5541996637775">41 9.9663-7775</a></h2>
     <p>©2026 | Aluno Cursando ADS | Todos os Direitos Reservados.</p>
     <p>Política de Privacidade | Proteção de dados | Encarregado de dados</p>
   </footer>
+
+  <audio id="audio-hino" preload="auto" src="hibo.mp3"></audio>
+
+  <script>
+    const audioHino = document.getElementById('audio-hino');
+    const iconesGremio = document.querySelectorAll('.gremio-icon');
+
+    iconesGremio.forEach((icone) => {
+      icone.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!audioHino) return;
+
+        audioHino.currentTime = 0;
+        audioHino.play().catch(() => {
+          alert('Clique no ícone novamente para ativar o áudio.');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
